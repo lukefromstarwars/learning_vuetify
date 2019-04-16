@@ -1,20 +1,20 @@
 <template>
   <nav>
     <v-toolbar flat app>
-      <v-toolbar-side-icon class="light-grey" @click="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-side-icon class="primary" @click="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title class="text-uppercase">
         <span class="font-weight-light">Todo</span>
         <span>Ninja</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn flat color="success">
+      <v-btn flat color="primary lighten-2">
         <span>Sign Out</span>
         <v-icon right>exit_to_app</v-icon>
       </v-btn>
     </v-toolbar>
 
-    <v-navigation-drawer app v-model="drawer" primary>
-      <p>test</p>
+    <v-navigation-drawer app v-model="drawer" class="primary">
+      <p class="primary">test</p>
     </v-navigation-drawer>
   </nav>
 </template>
