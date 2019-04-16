@@ -2,6 +2,16 @@
   <div>
     <h1 class="subheading grey--text">Dashboard</h1>
     <v-container grid-list-md class="mx-0 my-5">
+      <v-layout row wrap class="mb3">
+        <v-btn small flat color="grey" @click="sortBy('title')">
+          <v-icon left small>folder</v-icon>
+          <span class="caption text-lowercase">By project name</span>
+        </v-btn>
+        <v-btn small flat color="grey" @click="sortBy('person')">
+          <v-icon left small>person</v-icon>
+          <span class="caption text-lowercase">By person</span>
+        </v-btn>
+      </v-layout>
       <v-card
         flat
         class="pa-3"
@@ -44,6 +54,8 @@
 </template>
 
 <script>
+import _ from "lodash";
+
 export default {
   data() {
     return {
@@ -83,7 +95,12 @@ export default {
       ]
     };
   },
-  components: {}
+  methods: {
+    sortBy(prop) {
+      // this.projects.sort((a, b) => (a[prop] < b[prop] ? -1 : 1));
+      this.projects = _.sortBy(this.projects, [prop]);
+    }
+  }
 };
 </script>
 <style>
