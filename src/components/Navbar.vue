@@ -45,7 +45,7 @@ export default {
       drawer: false,
       links: [
         { icon: "dashboard", text: "Dashboard", route: "/" },
-        { icon: "folder", text: "My projects", route: "/projects" },
+        { icon: "folder", text: "My projects", route: "/project" },
         { icon: "person", text: "Team", route: "/team" }
       ]
     };

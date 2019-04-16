@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div>
     <h1>Home page</h1>
 
     <v-btn depressed color="lime darken-4" class="hidden-md-and-down"
