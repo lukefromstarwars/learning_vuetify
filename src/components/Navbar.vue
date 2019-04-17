@@ -21,6 +21,7 @@
         <v-flex class="mt-5"
           ><v-avatar size="100" color="primary darken-4">
             <img src="/avatar-1.png" alt="alt" />
+            <p class="white--text subheading mt-1"></p>
           </v-avatar>
         </v-flex>
       </v-layout>
