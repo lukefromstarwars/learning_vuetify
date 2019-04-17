@@ -42,6 +42,10 @@
             <p class="white--text subheading mt-1"></p>
           </v-avatar>
         </v-flex>
+
+        <v-flex class="mt-4 mb-3">
+          <Popup></Popup>
+        </v-flex>
       </v-layout>
       <v-list light="true" dense="true">
         <v-list-tile
@@ -65,7 +69,9 @@
   </nav>
 </template>
 <script>
+import Popup from "./Popup";
 export default {
+  components: { Popup },
   data() {
     return {
       drawer: false,
