@@ -17,6 +17,13 @@
     </v-toolbar>
 
     <v-navigation-drawer app v-model="drawer" class="primary">
+      <v-layout column align-center>
+        <v-flex class="mt-5"
+          ><v-avatar size="100" color="primary darken-4">
+            <img src="/avatar-1.png" alt="alt" />
+          </v-avatar>
+        </v-flex>
+      </v-layout>
       <v-list light="true" dense="true">
         <v-list-tile
           dark
