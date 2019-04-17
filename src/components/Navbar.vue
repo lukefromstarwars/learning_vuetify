@@ -10,7 +10,25 @@
         <span>Ninja</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn flat color="primary lighten-2">
+      <div class="text-xs-center">
+        <v-menu offset-y>
+          <v-btn color="primary" dark slot="activator">
+            <v-icon left>expand_more</v-icon>
+            <span>Menu</span>
+          </v-btn>
+          <v-list>
+            <v-list-tile
+              v-for="link in links"
+              :key="link.text"
+              router
+              :to="link.route"
+            >
+              <v-list-tile-title>{{ link.text }}</v-list-tile-title>
+            </v-list-tile>
+          </v-list>
+        </v-menu>
+      </div>
+      <v-btn flat color="primary">
         <span>Sign Out</span>
         <v-icon right>exit_to_app</v-icon>
       </v-btn>
