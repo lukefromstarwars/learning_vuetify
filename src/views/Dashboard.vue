@@ -3,14 +3,32 @@
     <h1 class="subheading grey--text">Dashboard</h1>
     <v-container grid-list-md class="mx-0 my-5">
       <v-layout row wrap class="mb3">
-        <v-btn small flat color="grey" @click="sortBy('title')">
-          <v-icon left small>folder</v-icon>
-          <span class="caption text-lowercase">By project name</span>
-        </v-btn>
-        <v-btn small flat color="grey" @click="sortBy('person')">
-          <v-icon left small>person</v-icon>
-          <span class="caption text-lowercase">By person</span>
-        </v-btn>
+        <v-tooltip top>
+          <v-btn
+            small
+            flat
+            color="grey"
+            @click="sortBy('title')"
+            slot="activator"
+          >
+            <v-icon left small>folder</v-icon>
+            <span class="caption text-lowercase">By project name</span>
+          </v-btn>
+          <span>Sort project by project name</span>
+        </v-tooltip>
+        <v-tooltip top>
+          <v-btn
+            small
+            flat
+            color="grey"
+            @click="sortBy('person')"
+            slot="activator"
+          >
+            <v-icon left small>person</v-icon>
+            <span class="caption text-lowercase">By person</span>
+          </v-btn>
+          <span>Sort project by person</span>
+        </v-tooltip>
       </v-layout>
       <v-card
         flat
@@ -20,21 +38,15 @@
       >
         <v-layout row wrap :class="`pa3 project ${project.status}`">
           <v-flex xs12 md6>
-            <div class="caption grey--text">
-              Project title
-            </div>
+            <div class="caption grey--text">Project title</div>
             <div>{{ project.title }}</div>
           </v-flex>
           <v-flex xs12 sm4 md2>
-            <div class="caption grey--text">
-              Person
-            </div>
+            <div class="caption grey--text">Person</div>
             <div>{{ project.person }}</div>
           </v-flex>
           <v-flex xs12 sm4 md2>
-            <div class="caption grey--text">
-              Due by
-            </div>
+            <div class="caption grey--text">Due by</div>
             <div>{{ project.due }}</div>
           </v-flex>
           <v-flex xs12 sm4 md2>
