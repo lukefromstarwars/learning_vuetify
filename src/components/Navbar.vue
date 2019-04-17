@@ -47,7 +47,7 @@
           <Popup></Popup>
         </v-flex>
       </v-layout>
-      <v-list light="true" dense="true">
+      <v-list light dense>
         <v-list-tile
           dark
           v-for="link in links"
