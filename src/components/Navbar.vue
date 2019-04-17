@@ -78,7 +78,8 @@ export default {
       links: [
         { icon: "dashboard", text: "Dashboard", route: "/" },
         { icon: "folder", text: "My projects", route: "/project" },
-        { icon: "person", text: "Team", route: "/team" }
+        { icon: "person", text: "Team", route: "/team" },
+        { icon: "domain", text: "Sectors", route: "/sectors" }
       ]
     };
   }
