@@ -9,7 +9,7 @@
         color="primary"
         @click="loadSectors"
       >
-        Load sectors
+        {{ $t("load_sectors") }}
       </v-btn>
       <v-spacer></v-spacer>
       <h2>{{ status }}</h2>
@@ -30,7 +30,6 @@
   </div>
 </template>
 <script>
-import axios from "axios";
 export default {
   data() {
     return {
@@ -41,8 +40,7 @@ export default {
   },
   methods: {
     loadSectors() {
-      //   status => "Loading...";
-      axios
+      this.axios
         .get("https://localhost:44398/api/sectors")
         .then(response => {
           this.sectors = response.data;
@@ -51,7 +49,16 @@ export default {
         .catch(error => {
           console.log(error);
         });
+      //   status => "Loading...";
     }
-  }
+  },
+  mounted() {}
 };
 </script>
+<i18n>
+{
+  "fr": {
+    "load_sectors": "Liste <strong>extraordinaire</strong>"
+  }
+}
+</i18n>
