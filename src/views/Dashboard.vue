@@ -66,8 +66,6 @@
 </template>
 
 <script>
-import _ from "lodash";
-
 export default {
   data() {
     return {
@@ -109,8 +107,7 @@ export default {
   },
   methods: {
     sortBy(prop) {
-      // this.projects.sort((a, b) => (a[prop] < b[prop] ? -1 : 1));
-      this.projects = _.sortBy(this.projects, [prop]);
+      this.projects = this.$_.sortBy(this.projects, [prop]);
     }
   }
 };

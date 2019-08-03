@@ -22,8 +22,6 @@
   </div>
 </template>
 <script>
-import _ from "lodash";
-
 export default {
   data() {
     return {
@@ -65,7 +63,7 @@ export default {
   },
   computed: {
     myProjects() {
-      return _.filter(this.projects, { person: "The Net Ninja" });
+      return this.$_.filter(this.projects, { person: "Chun Li" });
     }
   }
 };

@@ -6,28 +6,16 @@ import router from "./router";
 import store from "./store";
 import i18n from "./i18n";
 
-//  Vuetify
-// -----------------------------------------
-// import Vuetify from "vuetify";
-// import fr from "vuetify/es5/locale/fr";
-// import nl from "vuetify/es5/locale/nl";
-
-// Vue.use(Vuetify, {
-//   // lang: {
-//   //   locales: {
-//   //     fr,
-//   //     nl
-//   //   },
-//   //   current: "fr"
-//   // }
-// });
-
 // Axios
 // -----------------------------------------
 import axios from "axios";
-import VueAxios from "vue-axios";
+Object.defineProperty(Vue.prototype, "axios", { value: axios });
 
-Vue.use(VueAxios, axios);
+// VueLodash
+// -----------------------------------------
+import _ from "lodash";
+Object.defineProperty(Vue.prototype, "$_", { value: _ });
+
 Vue.config.productionTip = false;
 
 // Axios
