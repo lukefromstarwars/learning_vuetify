@@ -9,19 +9,25 @@
         color="primary"
         @click="loadSectors"
       >
-        {{ $t("load_sectors") }}
+        <span>{{ $t("load_sectors") }}</span>
       </v-btn>
       <v-spacer></v-spacer>
-      <h2>{{ status }}</h2>
+      <h2>Status : {{ status }}</h2>
       <v-expansion-panel>
         <v-expansion-panel-content v-for="sector in sectors" :key="sector.id">
           <template v-slot:header>
-            <div>{{ sector.name }}</div>
+            <div>
+              <v-badge left>
+                <template v-slot:badge>
+                  <span>{{ sector.order }}</span>
+                </template>
+                <span>{{ sector.name.localized }}</span>
+              </v-badge>
+            </div>
           </template>
           <v-card>
-            <v-card-text class="px-4 grey--text"
-              ><div class="font-weight-bold">{{ sector.id }}</div>
-              {{ sector.description }}</v-card-text
+            <v-card-text class="px-4 grey--text">
+              {{ sector.description.localized }}</v-card-text
             >
           </v-card>
         </v-expansion-panel-content>
@@ -34,14 +40,21 @@ export default {
   data() {
     return {
       sectors: [],
-      status: "",
-      loading: false
+      status: "Click to load",
+      loading: false,
+      locale: "fr"
     };
   },
+  watch: {
+    locale(val) {
+      this.$i18n.locale = val;
+    }
+  },
+  mounted() {},
   methods: {
     loadSectors() {
       this.axios
-        .get("https://localhost:44398/api/sectors")
+        .get("https://localhost:44382/api/sectors")
         .then(response => {
           this.sectors = response.data;
           this.status = "Loaded";
@@ -49,16 +62,18 @@ export default {
         .catch(error => {
           console.log(error);
         });
-      //   status => "Loading...";
     }
-  },
-  mounted() {}
+  }
 };
 </script>
 <i18n>
 {
   "fr": {
-    "load_sectors": "Liste <strong>extraordinaire</strong>"
+    "load_sectors": "Liste des sectors"
+  },
+  "nl": {
+        "load_sectors": "Sectoren lijst"
   }
 }
 </i18n>
+-

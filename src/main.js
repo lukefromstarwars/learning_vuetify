@@ -9,12 +9,16 @@ import i18n from "./i18n";
 // Axios
 // -----------------------------------------
 import axios from "axios";
-Object.defineProperty(Vue.prototype, "axios", { value: axios });
+Object.defineProperty(Vue.prototype, "axios", {
+  value: axios
+});
 
 // VueLodash
 // -----------------------------------------
 import _ from "lodash";
-Object.defineProperty(Vue.prototype, "$_", { value: _ });
+Object.defineProperty(Vue.prototype, "$_", {
+  value: _
+});
 
 Vue.config.productionTip = false;
 

@@ -12,7 +12,7 @@
       <v-spacer></v-spacer>
       <div class="text-xs-center">
         <v-menu offset-y>
-          <v-btn color="primary" dark slot="activator">
+          <v-btn slot="activator" color="primary" dark>
             <v-icon left>expand_more</v-icon>
             <span>Menu</span>
           </v-btn>
@@ -34,7 +34,7 @@
       </v-btn>
     </v-toolbar>
 
-    <v-navigation-drawer app v-model="drawer" class="primary">
+    <v-navigation-drawer v-model="drawer" app class="primary">
       <v-layout column align-center>
         <v-flex class="mt-5"
           ><v-avatar size="100" color="primary darken-4">
@@ -49,9 +49,9 @@
       </v-layout>
       <v-list light dense>
         <v-list-tile
-          dark
           v-for="link in links"
           :key="link.text"
+          dark
           router
           :to="link.route"
         >

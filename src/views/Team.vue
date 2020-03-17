@@ -3,7 +3,7 @@
     <h1 class="subheading grey--text">Team</h1>
     <v-container class="my-3" grid-list-lg>
       <v-layout row wrap>
-        <v-flex xs12 sm6 md4 lg3 v-for="person in team" :key="person.name">
+        <v-flex v-for="person in team" :key="person.name" xs12 sm6 md4 lg3>
           <v-card flat class="text-xs-center ma-3 pa-1">
             <v-responsive class="pt-4">
               <v-avatar size="80" color="grey">

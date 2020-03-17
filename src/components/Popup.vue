@@ -1,31 +1,31 @@
 <template>
   <v-dialog max-width="600px" transition="dialog-transition"
-    ><v-btn color="primary darken-2" flat slot="activator"
+    ><v-btn slot="activator" color="primary darken-2" flat
       >Add new project</v-btn
     >
     <v-card
       ><v-card-title primary-title><h2>Add a new project</h2> </v-card-title
       ><v-card-text
-        ><v-form class="px-3" ref="form"
+        ><v-form ref="form" class="px-3"
           ><v-text-field
-            label="Title"
             v-model="title"
+            label="Title"
             prepend-icon="folder"
             :rules="inputRules"
           ></v-text-field>
           <v-spacer></v-spacer>
           <v-textarea
+            v-model="content"
             solo
             label="Information"
-            v-model="content"
             prepend-icon="edit"
             :rules="inputRules"
           ></v-textarea>
           <v-spacer></v-spacer>
-          <v-menu :close-on-content-click="false" full-width v-model="menu">
+          <v-menu v-model="menu" :close-on-content-click="false" full-width>
             <v-text-field
-              prepend-icon="date_range"
               slot="activator"
+              prepend-icon="date_range"
               :value="formattedDate"
               clearable
               label="Due date"
@@ -58,16 +58,16 @@ export default {
       ]
     };
   },
+  computed: {
+    formattedDate() {
+      return this.due ? format(this.due, "Do MMM YYYY") : "";
+    }
+  },
   methods: {
     submit() {
       if (this.$refs.form.validate()) {
         console.log(this.title, this.content, this.due);
       }
-    }
-  },
-  computed: {
-    formattedDate() {
-      return this.due ? format(this.due, "Do MMM YYYY") : "";
     }
   }
 };

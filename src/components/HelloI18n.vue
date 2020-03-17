@@ -12,6 +12,9 @@ export default {
 {
   "fr": {
     "hello": "Hello i18n in SFC!"
+  },
+  "nl":{
+    "hello": "Welkom"
   }
 }
 </i18n>

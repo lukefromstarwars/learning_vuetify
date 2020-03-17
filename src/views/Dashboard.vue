@@ -5,11 +5,11 @@
       <v-layout row wrap class="mb3">
         <v-tooltip top>
           <v-btn
+            slot="activator"
             small
             flat
             color="grey"
             @click="sortBy('title')"
-            slot="activator"
           >
             <v-icon left small>folder</v-icon>
             <span class="caption text-lowercase">By project name</span>
@@ -18,11 +18,11 @@
         </v-tooltip>
         <v-tooltip top>
           <v-btn
+            slot="activator"
             small
             flat
             color="grey"
             @click="sortBy('person')"
-            slot="activator"
           >
             <v-icon left small>person</v-icon>
             <span class="caption text-lowercase">By person</span>
@@ -31,10 +31,10 @@
         </v-tooltip>
       </v-layout>
       <v-card
-        flat
-        class="pa-3"
         v-for="project in projects"
         :key="project.title"
+        flat
+        class="pa-3"
       >
         <v-layout row wrap :class="`pa3 project ${project.status}`">
           <v-flex xs12 md6>
